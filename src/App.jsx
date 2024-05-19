@@ -16,16 +16,16 @@ function App() {
   return (
     <>
       <div className="App">
-        {puppies.map((puppy) => {
-          return (
+        <div className="puppy-list">
+          {puppies.map((puppy) => (
             <p
-              onClick={() => { setFeatPupId(puppy.id) }}
-              key={puppy.id}>{puppy.name}</p>
-            // console.log("puppy.id: ", puppy.id)
-          );
-        })}
+              onClick={() => setFeatPupId(puppy.id)}
+              key={puppy.id}
+              className="puppy-item">{puppy.name}</p>
+          ))}
+        </div>
         {featPupId !== null && (
-          <div>
+          <div className="featured-pup">
             <h2>{featuredPup.name || "No Name"}</h2>
             <ul>
               <li>Age: {featuredPup.age}</li>
